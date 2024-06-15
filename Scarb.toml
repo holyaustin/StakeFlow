@@ -1,0 +1,20 @@
+[package]
+name = "basic_staking_dapp"
+version = "0.1.0"
+edition = "2023_10"
+
+# See more keys and their definitions at https://docs.swmansion.com/scarb/docs/reference/manifest.html
+
+[dependencies]
+snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry", tag = "v0.14.0" }
+starknet = "2.4.1"
+openzeppelin = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v0.8.1" }
+
+[[target.starknet-contract]]
+casm = true
+sierra = true
+
+[tool.sncast.starknetTest]
+account = "starknetTest"
+accounts-file = "/Users/user/.starknet_accounts/starknet_open_zeppelin_accounts.json"
+url = "https://starknet-goerli.infura.io/v3/c61b0457e5004368ac942e464b8d1f62"
