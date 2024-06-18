@@ -99,3 +99,114 @@ The project has three tokens to interact with:
 └── tests
     └── test_contract.cairo
 ```
+
+
+StakeFlow: A Web3 Staking dApp Proposal
+Overview
+StakeFlow is a decentralized application (dApp) designed to provide a seamless and secure staking experience on the StarkNet blockchain. StakeFlow will enable users to stake their tokens, earn rewards, and participate in governance, all through an intuitive and user-friendly interface.
+
+Key Features
+User-Friendly Dashboard:
+
+Staking Overview: Display total staked tokens, current rewards, and estimated earnings.
+Portfolio Management: Track staked tokens across different pools.
+Staking Pools:
+
+Multiple Pools: Allow users to stake in various pools with different reward rates and lock-up periods.
+Custom Pools: Users can create and manage their staking pools.
+Rewards System:
+
+Real-Time Rewards: Display real-time reward updates.
+Compounding Options: Users can choose to auto-compound their rewards.
+Governance Participation:
+
+Voting Mechanism: Users can use staked tokens to vote on protocol proposals.
+Proposal Creation: Allow eligible users to create new governance proposals.
+Security Features:
+
+Multi-Signature Wallet Support: Enhance security for high-value accounts.
+Audited Smart Contracts: Regular security audits to ensure the safety of user funds.
+Analytics and Reporting:
+
+Performance Metrics: Detailed analytics on staking performance and historical data.
+Exportable Reports: Users can export staking and reward reports for personal record-keeping.
+Integration and Interoperability:
+
+Wallet Integration: Support for major wallets like MetaMask, WalletConnect, etc.
+Interoperability: Cross-chain staking capabilities to support tokens from different blockchains.
+Deployment on StarkNet
+Smart Contract Development:
+
+Develop staking and reward distribution contracts in Cairo, StarkNet's native programming language.
+Utilize StarkNet's layer 2 scalability to ensure low gas fees and fast transaction times.
+Testing and Audits:
+
+Conduct extensive testing on StarkNet's testnet to ensure robustness.
+Perform security audits with reputable firms to identify and mitigate vulnerabilities.
+Frontend Integration:
+
+Build a responsive frontend using React and integrate with StarkNet via the StarkNet.js library.
+Ensure seamless user experience across desktop and mobile devices.
+Deployment and Maintenance:
+
+Deploy the smart contracts to StarkNet mainnet.
+Establish a continuous integration/continuous deployment (CI/CD) pipeline for regular updates and maintenance.
+Rough Sketch of the UI
+Here's a rough sketch of the UI for StakeFlow:
+
+Home Screen:
+
+Header: Navigation menu with links to Dashboard, Staking Pools, Governance, and Profile.
+Main Section: Overview of total staked tokens, rewards, and latest updates.
+Footer: Quick links, social media icons, and contact information.
+Dashboard:
+
+Sidebar: Links to different sections (Overview, My Staking, Rewards, Governance).
+Main Panel:
+Staking Overview: Visual representation of staked tokens and rewards.
+Recent Activity: List of recent staking and reward activities.
+Portfolio Breakdown: Pie chart showing distribution of staked tokens.
+Staking Pools:
+
+Available Pools: List of staking pools with details like reward rate, lock-up period, and total staked tokens.
+Staking Form: Input fields for staking amount and pool selection.
+Action Buttons: Stake, Unstake, and Claim Rewards.
+Governance:
+
+Active Proposals: List of current governance proposals with voting options.
+Create Proposal: Form for eligible users to submit new proposals.
+Profile:
+
+User Info: Display user’s wallet address, total staked tokens, and rewards.
+Settings: Options for notification preferences, security settings, and account management.
+Conclusion
+StakeFlow aims to revolutionize the staking experience by leveraging StarkNet’s scalability and security. With a focus on user experience, robust security features, and comprehensive analytics, StakeFlow will empower users to maximize their staking rewards and actively participate in governance.
+
+https://blastapi.io/public-api/starknet
+
+https://starknet-sepolia.reddio.com/rpc/v0_7
+
+https://starknet-sepolia.public.blastapi.io/rpc/v0_7
+
+Error: code=ContractNotFound, message="Contract not found"
+
+Error: unknown class hash: 0x
+
+Compiling basic_staking_dapp v0.1.0 (/home/augustine/Dapps/2024/June2024/StakeFlow/Scarb.toml)
+warn: Unused variable. Consider ignoring by prefixing with `_`.
+ --> /home/augustine/.cache/scarb/registry/git/checkouts/starknet-foundry-v6206fshfutuo/e8cbecee/snforge_std/src/signature/stark_curve.cairo:27:20
+        let (pk_x, pk_y) = public_key.try_into().unwrap().coordinates();
+                   ^**^
+
+error: Method `span` could not be called on type `core::array::Span::<core::felt252>`.
+Candidate `ArrayTrait::span` inference failed with: Type mismatch: `core::array::Span::<core::felt252>` and `@core::array::Array::<?0>`
+ --> /home/augustine/.cache/scarb/registry/git/checkouts/cairo-contracts-9cboa8jg3jldq/5c7a022/src/account/account.cairo:272:64
+        starknet::call_contract_syscall(to, selector, calldata.span()).unwrap()
+                                                               ^**^
+
+warn: Plugin diagnostic: Failed to generate ABI: `__execute__` is a reserved entry point names for account contracts only.
+ --> /home/augustine/.cache/scarb/registry/git/checkouts/cairo-contracts-9cboa8jg3jldq/5c7a022/src/presets/account.cairo:16:5
+    #[abi(embed_v0)]
+    ^**************^
+
+error: could not compile `basic_staking_dapp` due to previous error

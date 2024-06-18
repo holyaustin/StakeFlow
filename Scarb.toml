@@ -13,8 +13,3 @@ openzeppelin = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", ta
 [[target.starknet-contract]]
 casm = true
 sierra = true
-
-[tool.sncast.starknetTest]
-account = "starknetTest"
-accounts-file = "/Users/user/.starknet_accounts/starknet_open_zeppelin_accounts.json"
-url = "https://starknet-goerli.infura.io/v3/c61b0457e5004368ac942e464b8d1f62"
