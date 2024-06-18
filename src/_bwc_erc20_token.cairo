@@ -105,8 +105,8 @@ mod BWCERC20Token {
         // self.balances.write(recipient, _initial_supply);
         self.owner.write(recipient);
 
-        self.name.write('BlockheaderToken');
-        self.symbol.write('BWC');
+        self.name.write('StakeFlow Token');
+        self.symbol.write('SFT');
         self.decimals.write(18);
         self.total_supply.write(1000000);
         self.balances.write(recipient, 1000000);
@@ -336,7 +336,7 @@ mod test {
         let contract_address = deploy_contract();
         let dispatcher = IERC20Dispatcher { contract_address };
         let symbol = dispatcher.get_symbol();
-        assert(symbol == 'BWC', Errors::INCORRECT_SYMBOLS);
+        assert(symbol == 'SFT', Errors::INCORRECT_SYMBOLS);
     }
 
     #[test]

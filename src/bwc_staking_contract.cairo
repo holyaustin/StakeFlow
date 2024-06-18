@@ -235,7 +235,7 @@ mod BWCStakingContract {
             ); // This contract must have enough reward token to transfer to Staker
             assert(
                 bwc_erc20_contract.balance_of(address_this) >= amount,
-                'Not enough BWC token to send'
+                'Not enough SFT token to send'
             ); // This contract must have enough stake token to transfer back to Staker
             assert(
                 receipt_contract.allowance(caller, address_this) >= amount,

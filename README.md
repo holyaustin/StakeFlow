@@ -188,56 +188,16 @@ https://starknet-sepolia.reddio.com/rpc/v0_7
 
 https://starknet-sepolia.public.blastapi.io/rpc/v0_7
 
-Error: code=ContractNotFound, message="Contract not found"
-
-Error: unknown class hash: 0x
-
-Compiling basic_staking_dapp v0.1.0 (/home/augustine/Dapps/2024/June2024/StakeFlow/Scarb.toml)
-warn: Unused variable. Consider ignoring by prefixing with `_`.
- --> /home/augustine/.cache/scarb/registry/git/checkouts/starknet-foundry-v6206fshfutuo/e8cbecee/snforge_std/src/signature/stark_curve.cairo:27:20
-        let (pk_x, pk_y) = public_key.try_into().unwrap().coordinates();
-                   ^**^
-
-error: Method `span` could not be called on type `core::array::Span::<core::felt252>`.
-Candidate `ArrayTrait::span` inference failed with: Type mismatch: `core::array::Span::<core::felt252>` and `@core::array::Array::<?0>`
- --> /home/augustine/.cache/scarb/registry/git/checkouts/cairo-contracts-9cboa8jg3jldq/5c7a022/src/account/account.cairo:272:64
-        starknet::call_contract_syscall(to, selector, calldata.span()).unwrap()
-                                                               ^**^
-
-warn: Plugin diagnostic: Failed to generate ABI: `__execute__` is a reserved entry point names for account contracts only.
- --> /home/augustine/.cache/scarb/registry/git/checkouts/cairo-contracts-9cboa8jg3jldq/5c7a022/src/presets/account.cairo:16:5
-    #[abi(embed_v0)]
-    ^**************^
-
-error: could not compile `basic_staking_dapp` due to previous error
-
-scarb 2.6.4 (c4c7c0bac 2024-03-19)
-cairo: 2.6.3 (https://crates.io/crates/cairo-lang-compiler/2.6.3)
-sierra: 1.5.0
-
-
-Compiling basic_staking_dapp v0.1.0 (/home/augustine/Dapps/2024/June2024/StakeFlow/Scarb.toml)
-warn: Unused variable. Consider ignoring by prefixing with `_`.
- --> /home/augustine/.cache/scarb/registry/git/checkouts/starknet-foundry-v6206fshfutuo/e8cbecee/snforge_std/src/signature/stark_curve.cairo:27:20
-        let (pk_x, pk_y) = public_key.try_into().unwrap().coordinates();
-                   ^**^
-
-error: Method `span` could not be called on type `core::array::Span::<core::felt252>`.
-Candidate `ArrayTrait::span` inference failed with: Type mismatch: `core::array::Span::<core::felt252>` and `@core::array::Array::<?0>`
- --> /home/augustine/.cache/scarb/registry/git/checkouts/cairo-contracts-9cboa8jg3jldq/5c7a022/src/account/account.cairo:272:64
-        starknet::call_contract_syscall(to, selector, calldata.span()).unwrap()
-                                                               ^**^
-
-warn: Plugin diagnostic: Failed to generate ABI: `__execute__` is a reserved entry point names for account contracts only.
- --> /home/augustine/.cache/scarb/registry/git/checkouts/cairo-contracts-9cboa8jg3jldq/5c7a022/src/presets/account.cairo:16:5
-    #[abi(embed_v0)]
-    ^**************^
-
-error: could not compile `basic_staking_dapp` due to previous error
-
-
 starkli declare target/dev/contracts_Ownable.sierra.json \
     --rpc=https://starknet-sepolia.infura.io/v3/<API_KEY> \
     --compiler-version=2.6.0
 
-starkli declare target/dev/<NAME>.json --network=sepolia --compiler-version=2.1.0
+starkli declare --account /home/augustine/.starkli-wallets/deployer/keystore.jso ./target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
+
+starkli declare --account ~/.starkli-wallets/deployer/account.json --rpc=https://starknet-sepolia.reddio.com/rpc/v0_7 --network=sepolia --compiler-version=2.4.0 target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
+
+starkli account deploy ~/.starkli-wallets/deployer/account.
+
+export STARKNET_RPC="https://starknet-sepolia.public.blastapi.io/rpc/v0_7"
+ export STARKNET_ACCOUNT=".wallets/account.json"
+ export STARKNET_KEYSTORE=".wallets/keystore.json"
