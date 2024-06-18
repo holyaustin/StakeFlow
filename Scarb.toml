@@ -1,5 +1,5 @@
 [package]
-name = "basic_staking_dapp"
+name = "stakeflow"
 version = "0.1.0"
 edition = "2023_10"
 

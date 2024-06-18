@@ -1,4 +1,4 @@
-use basic_staking_dapp::{
+use stakeflow::{
     bwc_staking_contract::{IStakeDispatcherTrait, IStake, BWCStakingContract, IStakeDispatcher},
     erc20_token::{IERC20DispatcherTrait, IERC20, ERC20, IERC20Dispatcher}
 };
