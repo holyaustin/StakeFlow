@@ -90,16 +90,15 @@ The project has three tokens to interact with:
 ├── package-lock.json
 ├── package.json
 ├── src
-│   ├── bwc_erc20_token.cairo
-│   ├── bwc_staking_contract.cairo
+│   ├── sft_erc20_token.cairo
+│   ├── sft_staking_contract.cairo
 │   ├── lib.cairo
 │   ├── receipt_token.cairo
-│   └── reward_token.cairo
+│   └── faucet.cairo
 ├── target
 └── tests
     └── test_contract.cairo
 ```
-
 
 StakeFlow: A Web3 Staking dApp Proposal
 Overview
