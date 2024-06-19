@@ -188,10 +188,6 @@ https://starknet-sepolia.reddio.com/rpc/v0_7
 
 https://starknet-sepolia.public.blastapi.io/rpc/v0_7
 
-starkli declare target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json \
-    --rpc=https://starknet-sepolia.infura.io/v3/<API_KEY> \
-    --compiler-version=2.6.0
-
 starkli declare --account /home/augustine/.starkli-wallets/deployer/keystore.jso ./target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
 
 starkli declare --account ~/.starkli-wallets/deployer/account.json --rpc=https://starknet-sepolia.reddio.com/rpc/v0_7 --network=sepolia --compiler-version=2.4.0 target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
@@ -199,3 +195,20 @@ starkli declare --account ~/.starkli-wallets/deployer/account.json --rpc=https:/
 export STARKNET_RPC="https://starknet-sepolia.public.blastapi.io/rpc/v0_7"
 export STARKNET_ACCOUNT="~/.starkli-wallets/deployer/account.json"
 export STARKNET_KEYSTORE="~/.starkli-wallets/deployer/keystore.json"
+
+starkli declare target/dev/stakeflow_ERC20.contract_class.json
+Class hash declared:
+0x05c8e5df38f3b519ce721bfd84abf30518c362fa32dca8087b1b68e9db3e4091
+
+starkli declare target/dev/stakeflow_Faucet.contract_class.json
+Class hash declared:
+0x06d2870c70dacc662918859bef9563dd00f8dfb8a1b833440c2fedf913e881b6
+
+starkli declare target/dev/stakeflow_BWCStakingContract.contract_class.json
+Class hash declared:
+0x05af77d7d1458c47da09f9d9dd57e5cae0f647fc14c59a23ddefdca06263e2bf
+
+starkli deploy \
+    0x05c8e5df38f3b519ce721bfd84abf30518c362fa32dca8087b1b68e9db3e4091 \
+    <CONSTRUCTOR_INPUTS> \
+    --network=sepolia
