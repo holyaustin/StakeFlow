@@ -188,7 +188,7 @@ https://starknet-sepolia.reddio.com/rpc/v0_7
 
 https://starknet-sepolia.public.blastapi.io/rpc/v0_7
 
-starkli declare target/dev/contracts_Ownable.sierra.json \
+starkli declare target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json \
     --rpc=https://starknet-sepolia.infura.io/v3/<API_KEY> \
     --compiler-version=2.6.0
 
@@ -196,8 +196,6 @@ starkli declare --account /home/augustine/.starkli-wallets/deployer/keystore.jso
 
 starkli declare --account ~/.starkli-wallets/deployer/account.json --rpc=https://starknet-sepolia.reddio.com/rpc/v0_7 --network=sepolia --compiler-version=2.4.0 target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
 
-starkli account deploy ~/.starkli-wallets/deployer/account.
-
 export STARKNET_RPC="https://starknet-sepolia.public.blastapi.io/rpc/v0_7"
- export STARKNET_ACCOUNT=".wallets/account.json"
- export STARKNET_KEYSTORE=".wallets/keystore.json"
+export STARKNET_ACCOUNT="~/.starkli-wallets/deployer/account.json"
+export STARKNET_KEYSTORE="~/.starkli-wallets/deployer/keystore.json"
