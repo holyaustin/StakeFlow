@@ -195,17 +195,21 @@ export STARKNET_RPC="https://starknet-sepolia.public.blastapi.io/rpc/v0_7"
 export STARKNET_ACCOUNT="~/.starkli-wallets/deployer/account.json"
 export STARKNET_KEYSTORE="~/.starkli-wallets/deployer/keystore.json"
 
+starkli declare target/dev/stakeflow_BWCERC20Token.contract_class.json
+Class hash declared:
+0x032421a6642ce6a4b65f0f35498c4b70bef9bcc7f938fc905da0b45e57a4ced8
+
 starkli declare target/dev/stakeflow_ERC20.contract_class.json
 Class hash declared:
-0x05c8e5df38f3b519ce721bfd84abf30518c362fa32dca8087b1b68e9db3e4091
+0x04547a38c7075a05511a853e6b1d0dede1ea3289e30e0ea75c9cec8ca9f039c7
 
 starkli declare target/dev/stakeflow_Faucet.contract_class.json
 Class hash declared:
-0x06d2870c70dacc662918859bef9563dd00f8dfb8a1b833440c2fedf913e881b6
+0x07f8fdd6214c07959b1e88870760f113aece3904ce2e09efc91aebe7396ad242
 
 starkli declare target/dev/stakeflow_BWCStakingContract.contract_class.json
 Class hash declared:
-0x05af77d7d1458c47da09f9d9dd57e5cae0f647fc14c59a23ddefdca06263e2bf
+0x02f0fcb27e908ec57988632613b56011e4b68be57712feec4662d0d351af3abe
 
 starkli deploy \
     0x05c8e5df38f3b519ce721bfd84abf30518c362fa32dca8087b1b68e9db3e4091 \
