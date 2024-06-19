@@ -181,17 +181,17 @@ Settings: Options for notification preferences, security settings, and account m
 Conclusion
 StakeFlow aims to revolutionize the staking experience by leveraging StarkNet’s scalability and security. With a focus on user experience, robust security features, and comprehensive analytics, StakeFlow will empower users to maximize their staking rewards and actively participate in governance.
 
-https://blastapi.io/public-api/starknet
+<https://blastapi.io/public-api/starknet>
 
-https://starknet-sepolia.reddio.com/rpc/v0_7
+<https://starknet-sepolia.reddio.com/rpc/v0_7>
 
-https://starknet-sepolia.public.blastapi.io/rpc/v0_7
+<https://starknet-sepolia.public.blastapi.io/rpc/v0_7>
 
 starkli declare --account /home/augustine/.starkli-wallets/deployer/keystore.jso ./target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
 
-starkli declare --account ~/.starkli-wallets/deployer/account.json --rpc=https://starknet-sepolia.reddio.com/rpc/v0_7 --network=sepolia --compiler-version=2.4.0 target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
+starkli declare --account ~/.starkli-wallets/deployer/account.json --rpc=<https://starknet-sepolia.reddio.com/rpc/v0_7> --network=sepolia --compiler-version=2.4.0 target/dev/stakeflow_BWCStakingContract.compiled_contract_class.json
 
-export STARKNET_RPC="https://starknet-sepolia.public.blastapi.io/rpc/v0_7"
+export STARKNET_RPC="<https://starknet-sepolia.public.blastapi.io/rpc/v0_7>"
 export STARKNET_ACCOUNT="~/.starkli-wallets/deployer/account.json"
 export STARKNET_KEYSTORE="~/.starkli-wallets/deployer/keystore.json"
 
@@ -211,7 +211,4 @@ starkli declare target/dev/stakeflow_BWCStakingContract.contract_class.json
 Class hash declared:
 0x02f0fcb27e908ec57988632613b56011e4b68be57712feec4662d0d351af3abe
 
-starkli deploy \
-    0x05c8e5df38f3b519ce721bfd84abf30518c362fa32dca8087b1b68e9db3e4091 \
-    <CONSTRUCTOR_INPUTS> \
-    --network=sepolia
+starkli deploy 0x032421a6642ce6a4b65f0f35498c4b70bef9bcc7f938fc905da0b45e57a4ced8 0x0785fc7063c064df7eA6aaF70777afd413E5bB9D15e2A52dD47A1bC58f72B0F6 --network=sepolia
