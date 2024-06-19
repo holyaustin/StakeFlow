@@ -1,6 +1,6 @@
 use stakeflow::{
-    bwc_staking_contract::{IStakeDispatcherTrait, IStake, BWCStakingContract, IStakeDispatcher},
-    erc20_token::{IERC20DispatcherTrait, IERC20, ERC20, IERC20Dispatcher}
+    sft_staking_contract::{IStakeDispatcherTrait, IStake, BWCStakingContract, IStakeDispatcher},
+    receipt_token::{IERC20DispatcherTrait, IERC20, ERC20, IERC20Dispatcher}
 };
 use core::{result::ResultTrait, option::OptionTrait, array::ArrayTrait, traits::{Into, TryInto}};
 use starknet::{ContractAddress, get_block_timestamp, contract_address::contract_address_const};

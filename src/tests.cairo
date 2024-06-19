@@ -1,2 +1,2 @@
 mod erc20_token;
-mod bwc_staking_contract;
+mod sft_staking_contract;

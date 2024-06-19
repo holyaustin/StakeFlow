@@ -80,18 +80,18 @@ mod ERC20 {
     #[constructor]
     fn constructor(
         ref self: ContractState,
-        name_: felt252,
-        symbol_: felt252,
-        decimals_: u8, // initial_supply: u256,
+        // name_: felt252,
+        // symbol_: felt252,
+        // decimals_: u8, // initial_supply: u256,
         // recipient: ContractAddress,
         owner_: ContractAddress
     ) {
         // assert(!recipient.is_zero(), 'ERC20: mint to the 0 address');
         // assert(!owner_.is_zero(), 'ERC20: owner set to 0 address');
 
-        self.name.write(name_);
-        self.symbol.write(symbol_);
-        self.decimals.write(decimals_);
+        self.name.write('StakeFlow Receipt Token');
+        self.symbol.write('SRT');
+        self.decimals.write(18);
         self.total_supply.write(1000000);
         self.balances.write(owner_, 1000000);
         self.owner.write(owner_);

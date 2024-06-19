@@ -1,6 +1,6 @@
 use core::option::OptionTrait;
-use stakeflow::erc20_token::IERC20DispatcherTrait;
-use stakeflow::erc20_token::{IERC20, ERC20, IERC20Dispatcher};
+use stakeflow::receipt_token::IERC20DispatcherTrait;
+use stakeflow::receipt_token::{IERC20, ERC20, IERC20Dispatcher};
 use starknet::ContractAddress;
 use starknet::contract_address::contract_address_const;
 use core::array::ArrayTrait;

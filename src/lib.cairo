@@ -1,5 +1,6 @@
-mod erc20_token;
-mod bwc_staking_contract;
+mod sft_erc20_token;
+mod receipt_token;
+mod sft_staking_contract;
 mod faucet;
 #[cfg(test)]
 mod tests;
