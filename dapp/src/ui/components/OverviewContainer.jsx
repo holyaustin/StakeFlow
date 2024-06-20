@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 import { useEffect, useState } from "react";
-import asset from "../../assets/solanaLogo.png";
+import asset from "../../assets/starknet.png";
 import { useNavigate } from "react-router-dom";
 import { useConnectWallet } from "../../context/ConnectContext";
 
@@ -38,9 +38,9 @@ function OverviewContainer() {
     <div className="flex items-center justify-between rounded-[10px] bg-white px-[74px] py-[36px] text-black">
       <div className="flex md:gap-x-[60px]">
         <div className="text-center">
-          <h2 className="mb-[14px] text-lg font-semibold">BWC Balance</h2>
+          <h2 className="mb-[14px] text-lg font-semibold">SFT Balance</h2>
           <h3 className="flex items-center w-full justify-center text-sm font-bold text-[#3a3a3a]">
-             {bwcBalance || "0"} <img src={asset} className="ml-1 h-5 w-5" alt="" />
+             {bwcBalance || "0"} <img src={asset} className="ml-1 h-5 w-5" alt="logo" />
           </h3>
         </div>
         <div className="text-center">
@@ -62,7 +62,7 @@ function OverviewContainer() {
         </div>
         <div className="text-center">
           <h2 className="mb-[14px] text-lg font-semibold">Duration</h2>
-          <h3 className="text-sm font-bold text-[#3a3a3a]">4 mins</h3>
+          <h3 className="text-sm font-bold text-[#3a3a3a]">2 mins</h3>
         </div>
       </div>
       <button

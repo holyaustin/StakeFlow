@@ -1,4 +1,4 @@
-import coinLogo from "../../assets/solanaLogo.png";
+import coinLogo from "../../assets/starknet.png";
 import arrDown from "../../assets/down-arrow.svg";
 function CryptoInput({getSymbol, symbol,balance, amount, setAmount}) {
   return (
@@ -7,7 +7,7 @@ function CryptoInput({getSymbol, symbol,balance, amount, setAmount}) {
         <div className="flex h-full items-center gap-x-1 rounded-[50px] border-[0.5px] border-solid border-[#c4c4c4] bg-[#430f5d] py-[9px] pl-[12px] pr-[30px] text-sm font-bold text-white">
           <img src={coinLogo} alt="" />
           <h4
-          >BWC</h4>
+          >SFT</h4>
           <img src={arrDown} alt="" className="ml-3" />
         </div>
       </button>
