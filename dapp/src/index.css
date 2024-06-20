@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* height: 100vh; */
+  /* background-color: #863efa; */
+  position: relative;
+}
+
+ul li a{
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+ul .active{
+  background-color: white;
+  color: #333;
+}
