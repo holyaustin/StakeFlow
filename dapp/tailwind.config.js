@@ -7,7 +7,7 @@ export default {
     // },
     extend: {
       backgroundImage: {
-        mainBg: "url('/src/assets/bg.jpg')",
+        mainBg: "url('/src/assets/bg1.webp')",
       },
       boxShadow: {
         shadowPrimary: "2.6px 5.3px 5.3px hsl(0deg 0% 0% / 0.32)",
