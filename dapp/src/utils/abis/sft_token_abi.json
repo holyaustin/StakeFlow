@@ -1,12 +1,12 @@
 [
     {
-      "type": "impl",
       "name": "IERC20Impl",
-      "interface_name": "basic_staking_dapp::erc20_token::IERC20"
+      "type": "impl",
+      "interface_name": "stakeflow::sft_erc20_token::IERC20"
     },
     {
-      "type": "struct",
       "name": "core::integer::u256",
+      "type": "struct",
       "members": [
         {
           "name": "low",
@@ -19,12 +19,26 @@
       ]
     },
     {
+      "name": "core::bool",
+      "type": "enum",
+      "variants": [
+        {
+          "name": "False",
+          "type": "()"
+        },
+        {
+          "name": "True",
+          "type": "()"
+        }
+      ]
+    },
+    {
+      "name": "stakeflow::sft_erc20_token::IERC20",
       "type": "interface",
-      "name": "basic_staking_dapp::erc20_token::IERC20",
       "items": [
         {
-          "type": "function",
           "name": "get_name",
+          "type": "function",
           "inputs": [],
           "outputs": [
             {
@@ -34,8 +48,8 @@
           "state_mutability": "view"
         },
         {
-          "type": "function",
           "name": "get_symbol",
+          "type": "function",
           "inputs": [],
           "outputs": [
             {
@@ -45,8 +59,8 @@
           "state_mutability": "view"
         },
         {
-          "type": "function",
           "name": "get_decimals",
+          "type": "function",
           "inputs": [],
           "outputs": [
             {
@@ -56,8 +70,8 @@
           "state_mutability": "view"
         },
         {
-          "type": "function",
           "name": "get_total_supply",
+          "type": "function",
           "inputs": [],
           "outputs": [
             {
@@ -67,8 +81,8 @@
           "state_mutability": "view"
         },
         {
-          "type": "function",
           "name": "balance_of",
+          "type": "function",
           "inputs": [
             {
               "name": "account",
@@ -83,8 +97,8 @@
           "state_mutability": "view"
         },
         {
-          "type": "function",
           "name": "allowance",
+          "type": "function",
           "inputs": [
             {
               "name": "owner",
@@ -103,8 +117,8 @@
           "state_mutability": "view"
         },
         {
-          "type": "function",
           "name": "transfer",
+          "type": "function",
           "inputs": [
             {
               "name": "recipient",
@@ -119,8 +133,8 @@
           "state_mutability": "external"
         },
         {
-          "type": "function",
           "name": "transfer_from",
+          "type": "function",
           "inputs": [
             {
               "name": "sender",
@@ -139,8 +153,8 @@
           "state_mutability": "external"
         },
         {
-          "type": "function",
           "name": "approve",
+          "type": "function",
           "inputs": [
             {
               "name": "spender",
@@ -155,8 +169,8 @@
           "state_mutability": "external"
         },
         {
-          "type": "function",
           "name": "increase_allowance",
+          "type": "function",
           "inputs": [
             {
               "name": "spender",
@@ -171,8 +185,8 @@
           "state_mutability": "external"
         },
         {
-          "type": "function",
           "name": "decrease_allowance",
+          "type": "function",
           "inputs": [
             {
               "name": "spender",
@@ -187,8 +201,8 @@
           "state_mutability": "external"
         },
         {
-          "type": "function",
           "name": "mint",
+          "type": "function",
           "inputs": [
             {
               "name": "recipient",
@@ -199,99 +213,99 @@
               "type": "core::integer::u256"
             }
           ],
-          "outputs": [],
+          "outputs": [
+            {
+              "type": "core::bool"
+            }
+          ],
+          "state_mutability": "external"
+        },
+        {
+          "name": "burn",
+          "type": "function",
+          "inputs": [
+            {
+              "name": "amount",
+              "type": "core::integer::u256"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "core::bool"
+            }
+          ],
           "state_mutability": "external"
         }
       ]
     },
     {
-      "type": "constructor",
       "name": "constructor",
+      "type": "constructor",
       "inputs": [
-        {
-          "name": "name_",
-          "type": "core::felt252"
-        },
-        {
-          "name": "symbol_",
-          "type": "core::felt252"
-        },
-        {
-          "name": "decimals_",
-          "type": "core::integer::u8"
-        },
-        {
-          "name": "initial_supply",
-          "type": "core::integer::u256"
-        },
         {
           "name": "recipient",
           "type": "core::starknet::contract_address::ContractAddress"
-        },
-        {
-          "name": "owner_",
-          "type": "core::starknet::contract_address::ContractAddress"
         }
       ]
     },
     {
-      "type": "event",
-      "name": "basic_staking_dapp::erc20_token::ERC20::Transfer",
       "kind": "struct",
+      "name": "stakeflow::sft_erc20_token::SFTERC20Token::Approval",
+      "type": "event",
       "members": [
         {
-          "name": "from",
-          "type": "core::starknet::contract_address::ContractAddress",
-          "kind": "data"
-        },
-        {
-          "name": "to",
-          "type": "core::starknet::contract_address::ContractAddress",
-          "kind": "data"
-        },
-        {
-          "name": "value",
-          "type": "core::integer::u256",
-          "kind": "data"
-        }
-      ]
-    },
-    {
-      "type": "event",
-      "name": "basic_staking_dapp::erc20_token::ERC20::Approval",
-      "kind": "struct",
-      "members": [
-        {
+          "kind": "data",
           "name": "owner",
-          "type": "core::starknet::contract_address::ContractAddress",
-          "kind": "data"
+          "type": "core::starknet::contract_address::ContractAddress"
         },
         {
+          "kind": "data",
           "name": "spender",
-          "type": "core::starknet::contract_address::ContractAddress",
-          "kind": "data"
+          "type": "core::starknet::contract_address::ContractAddress"
         },
         {
+          "kind": "data",
           "name": "value",
-          "type": "core::integer::u256",
-          "kind": "data"
+          "type": "core::integer::u256"
         }
       ]
     },
     {
+      "kind": "struct",
+      "name": "stakeflow::sft_erc20_token::SFTERC20Token::Transfer",
       "type": "event",
-      "name": "basic_staking_dapp::erc20_token::ERC20::Event",
+      "members": [
+        {
+          "kind": "data",
+          "name": "from",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "kind": "data",
+          "name": "to",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "kind": "data",
+          "name": "value",
+          "type": "core::integer::u256"
+        }
+      ]
+    },
+    {
       "kind": "enum",
+      "name": "stakeflow::sft_erc20_token::SFTERC20Token::Event",
+      "type": "event",
       "variants": [
         {
-          "name": "Transfer",
-          "type": "basic_staking_dapp::erc20_token::ERC20::Transfer",
-          "kind": "nested"
+          "kind": "nested",
+          "name": "Approval",
+          "type": "stakeflow::sft_erc20_token::SFTERC20Token::Approval"
         },
         {
-          "name": "Approval",
-          "type": "basic_staking_dapp::erc20_token::ERC20::Approval",
-          "kind": "nested"
+          "kind": "nested",
+          "name": "Transfer",
+          "type": "stakeflow::sft_erc20_token::SFTERC20Token::Transfer"
         }
       ]
     }

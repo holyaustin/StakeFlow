@@ -6,18 +6,18 @@ import { useConnectWallet } from "../../context/ConnectContext";
 
 function OverviewContainer() {
   const { address, staking_contract, account, receipt_contract,reward_contract,
-    rewardContractAddress,  bwc_contract } = useConnectWallet();
+    rewardContractAddress,  sft_contract } = useConnectWallet();
   const navigate = useNavigate();
   const [stakeBalance, setStakeBalance] = useState("");
   const [receiptBalance, setReceiptBalance] = useState("")
   const [rewardBalance, setRewardBalance] = useState("")
-  const [bwcBalance, setBwcBalance] = useState("")
+  const [sftBalance, setSftBalance] = useState("")
 
   // get_total_stake
   const getBalance = async () => {
     try {
-      const rawBwcBalance = await bwc_contract.balance_of(address);
-      setBwcBalance(new BigNumber(rawBwcBalance).shift(-18).toFixed(2).toString())
+      const rawSftBalance = await sft_contract.balance_of(address);
+      setSftBalance(new BigNumber(rawSftBalance).shift(-18).toFixed(2).toString())
       const rawRewardBalance = await reward_contract.balance_of(address);
       setRewardBalance(new BigNumber(rawRewardBalance).shift(-18).toFixed(2).toString())
       const rawReceiptBalance = await receipt_contract.balance_of(address);
@@ -40,7 +40,8 @@ function OverviewContainer() {
         <div className="text-center">
           <h2 className="mb-[14px] text-lg font-semibold">SFT Balance</h2>
           <h3 className="flex items-center w-full justify-center text-sm font-bold text-[#3a3a3a]">
-             {bwcBalance || "0"} <img src={asset} className="ml-1 h-5 w-5" alt="logo" />
+          <img src={asset} className="ml-1 h-5 w-5" alt="logo" />
+             {sftBalance || "0"} SFT
           </h3>
         </div>
         <div className="text-center">
@@ -51,13 +52,13 @@ function OverviewContainer() {
        <div className="text-center">
        <h2 className="mb-[14px] text-lg font-semibold">Receipt Token</h2>
           <h3 className="text-sm font-bold text-[#3a3a3a]">
-            {receiptBalance || "0"} cSFT
+            {receiptBalance || "0"} SRT
           </h3>
        </div>
         <div className="text-center">
           <h2 className="mb-[14px] text-lg font-semibold">Reward Token</h2>
           <h3 className="text-sm font-bold text-[#3a3a3a]">
-            {rewardBalance || "0"} RSFT
+            {rewardBalance || "0"} SRWT
           </h3>
         </div>
         <div className="text-center">
