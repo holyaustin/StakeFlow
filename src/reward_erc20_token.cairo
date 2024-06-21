@@ -99,7 +99,7 @@ mod REWARDERC20 {
         self
             .emit(
                 Event::Transfer(
-                    Transfer { from: contract_address_const::<0>(), to: owner_, value: 1000000 }
+                    Transfer { from: contract_address_const::<0>(), to: owner_, value: 1000000000000000000000000 }
                 )
             );
     }

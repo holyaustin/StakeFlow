@@ -114,7 +114,7 @@ mod SFTERC20Token {
         self
             .emit(
                 Transfer { //Here, `contract_address_const::<0>()` is similar to address(0) in Solidity
-                    from: contract_address_const::<0>(), to: recipient, value: 1000000
+                    from: contract_address_const::<0>(), to: recipient, value: 1000000000000000000000000
                 }
             );
     }
@@ -320,7 +320,7 @@ mod test {
         let contract_address = deploy_contract();
         let dispatcher = IERC20Dispatcher { contract_address };
         let name = dispatcher.get_name();
-        assert(name == 'BlockheaderToken', Errors::INCORRECT_NAME);
+        assert(name == 'StakeFlow Token', Errors::INCORRECT_NAME);
     }
 
     #[test]
@@ -328,7 +328,7 @@ mod test {
         let contract_address = deploy_contract();
         let dispatcher = IERC20Dispatcher { contract_address };
         let name = dispatcher.get_name();
-        assert(name == 'BlockheaderToken', Errors::INCORRECT_NAME);
+        assert(name == 'StakeFlow Token', Errors::INCORRECT_NAME);
     }
 
     #[test]
