@@ -24,7 +24,7 @@ trait IERC20<TContractState> {
 }
 
 #[starknet::contract]
-mod BWCERC20Token {
+mod SFTERC20Token {
     // importing necessary libraries
     use starknet::{ContractAddress, get_caller_address, contract_address_const};
     use core::zeroable::Zeroable;
@@ -108,8 +108,8 @@ mod BWCERC20Token {
         self.name.write('StakeFlow Token');
         self.symbol.write('SFT');
         self.decimals.write(18);
-        self.total_supply.write(1000000);
-        self.balances.write(recipient, 1000000);
+        self.total_supply.write(1000000000000000000000000000);
+        self.balances.write(recipient, 1000000000000000000000000);
 
         self
             .emit(
@@ -296,7 +296,7 @@ mod BWCERC20Token {
 #[cfg(test)]
 mod test {
     use core::serde::Serde;
-    use super::{IERC20, BWCERC20Token, IERC20Dispatcher, IERC20DispatcherTrait};
+    use super::{IERC20, SFTERC20Token, IERC20Dispatcher, IERC20DispatcherTrait};
     use starknet::ContractAddress;
     use starknet::contract_address::contract_address_const;
     use core::ArrayTrait;
@@ -307,7 +307,7 @@ mod test {
 
     // helper function
     fn deploy_contract() -> ContractAddress {
-        let erc20_contract_class = declare('BWCERC20Token');
+        let erc20_contract_class = declare('SFTERC20Token');
         let file = FileTrait::new('data/constructor_args.txt');
         let constructor_args = read_txt(@file);
 
@@ -352,7 +352,7 @@ mod test {
         let address = deploy_contract();
         let dispatcher = IERC20Dispatcher { contract_address: address };
         let total_supply = dispatcher.get_total_supply();
-        assert(total_supply == 1000000, Errors::UNMATCHED_SUPPLY);
+        assert(total_supply == 1000000000000000000000000000, Errors::UNMATCHED_SUPPLY);
     }
 
     #[test]

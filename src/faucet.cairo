@@ -17,7 +17,7 @@ mod Faucet {
     use core::integer::u64;
     use core::zeroable::Zeroable;
     use stakeflow::sft_staking_contract::IStake;
-    use stakeflow::receipt_token::{IERC20Dispatcher, IERC20DispatcherTrait};
+    use stakeflow::receipt_erc20_token::{IERC20Dispatcher, IERC20DispatcherTrait};
     use starknet::{ContractAddress, get_caller_address, get_contract_address, get_block_timestamp};
 
 

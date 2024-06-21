@@ -22,7 +22,7 @@ trait IERC20<TContractState> {
 }
 
 #[starknet::contract]
-mod ERC20 {
+mod REWARDERC20 {
     use core::zeroable::Zeroable;
     use starknet::get_caller_address;
     use starknet::contract_address_const;
@@ -89,11 +89,11 @@ mod ERC20 {
         // assert(!recipient.is_zero(), 'ERC20: mint to the 0 address');
         // assert(!owner_.is_zero(), 'ERC20: owner set to 0 address');
 
-        self.name.write('StakeFlow Receipt Token');
-        self.symbol.write('SRT');
+        self.name.write('StakeFlow Reward Token');
+        self.symbol.write('SRWT');
         self.decimals.write(18);
-        self.total_supply.write(1000000);
-        self.balances.write(owner_, 1000000);
+        self.total_supply.write(1000000000000000000000000000);
+        self.balances.write(owner_, 10000000000000000000000000000);
         self.owner.write(owner_);
 
         self

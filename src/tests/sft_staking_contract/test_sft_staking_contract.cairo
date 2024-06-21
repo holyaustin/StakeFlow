@@ -1,6 +1,6 @@
 use stakeflow::{
-    sft_staking_contract::{IStakeDispatcherTrait, IStake, BWCStakingContract, IStakeDispatcher},
-    receipt_token::{IERC20DispatcherTrait, IERC20, ERC20, IERC20Dispatcher}
+    sft_staking_contract::{IStakeDispatcherTrait, IStake, SFTStakingContract, IStakeDispatcher},
+    receipt_erc20_token::{IERC20DispatcherTrait, IERC20, ERC20, IERC20Dispatcher}
 };
 use core::{result::ResultTrait, option::OptionTrait, array::ArrayTrait, traits::{Into, TryInto}};
 use starknet::{ContractAddress, get_block_timestamp, contract_address::contract_address_const};
@@ -10,25 +10,25 @@ use snforge_std::{
 };
 
 
-//BWC contract calldata
-const bwc_erc_name_: felt252 = 'BWCToken';
-const bwc_erc_symbol_: felt252 = 'BWC20';
+//SFT contract calldata
+const bwc_erc_name_: felt252 = 'SFTToken';
+const bwc_erc_symbol_: felt252 = 'SFT20';
 const bwc_erc_decimals_: u8 = 18_u8;
 
 
 //Receipt token contract calldata
-const receipt_erc_name_: felt252 = 'BWCRewardToken';
-const receipt_erc_symbol_: felt252 = 'wBWC20';
+const receipt_erc_name_: felt252 = 'SFTRewardToken';
+const receipt_erc_symbol_: felt252 = 'wSFT20';
 const receipt_erc_decimals_: u8 = 18_u8;
 
 
 //Reward token contract calldata
 const reward_erc_name_: felt252 = 'BWCReceiptToken';
-const reward_erc_symbol_: felt252 = 'cBWC20';
+const reward_erc_symbol_: felt252 = 'cSFT20';
 const reward_erc_decimals_: u8 = 18_u8;
 
 
-//Deploy helper function to return staking, reward, receipt and bwc contract addresses
+//Deploy helper function to return staking, reward, receipt and sft contract addresses
 fn deploy_contract() -> (ContractAddress, ContractAddress, ContractAddress, ContractAddress) {
     let erc20_contract_class = declare('ERC20');
     let mut bwc_calldata = array![
@@ -76,7 +76,7 @@ fn test_constructor() {
 
     let staking_dispatcher = IStakeDispatcher { contract_address: staking_contract_address };
     assert(
-        staking_dispatcher.get_bwc_token_address() == bwc_contract_address,
+        staking_dispatcher.get_sft_token_address() == bwc_contract_address,
         Errors::CONSTRUCTOR_ERROR
     );
     assert(
@@ -139,7 +139,7 @@ fn test_stake_low_cbwc() {
     let stake_dispatcher = IStakeDispatcher { contract_address: staking_contract_address };
     let bwc_dispatcher = IERC20Dispatcher { contract_address: bwc_contract_address };
 
-    //user1 is being sent 35 tokens worth of bwc
+    //user1 is being sent 35 tokens worth of sft
     start_prank(CheatTarget::One(bwc_contract_address), Account::admin());
     bwc_dispatcher.transfer(Account::user1(), 35);
     stop_prank(CheatTarget::One(bwc_contract_address));
@@ -153,7 +153,7 @@ fn test_stake_low_cbwc() {
     stake_dispatcher.stake(30);
 }
 
-// Test stake should fail if user has not approved the staking contract to spend his/her bwc token.
+// Test stake should fail if user has not approved the staking contract to spend his/her sft token.
 #[test]
 #[should_panic(expected: ('STAKE: Amount not allowed',))]
 fn test_amount_not_allowed() {
@@ -163,7 +163,7 @@ fn test_amount_not_allowed() {
     let stake_dispatcher = IStakeDispatcher { contract_address: staking_contract_address };
     let bwc_dispatcher = IERC20Dispatcher { contract_address: bwc_contract_address };
 
-    //user1 is being sent 35 tokens worth of bwc
+    //user1 is being sent 35 tokens worth of sft
     start_prank(CheatTarget::One(bwc_contract_address), Account::admin());
     bwc_dispatcher.transfer(Account::user1(), 35);
     stop_prank(CheatTarget::One(bwc_contract_address));
@@ -173,7 +173,7 @@ fn test_amount_not_allowed() {
     receipt_dispatcher.transfer(staking_contract_address, 20);
     stop_prank(CheatTarget::One(receipt_contract_address));
 
-    //user approves staking contract to spend 10 bwc tokens
+    //user approves staking contract to spend 10 sft tokens
     start_prank(CheatTarget::One(bwc_contract_address), Account::user1());
     bwc_dispatcher.approve(staking_contract_address, 10);
     stop_prank(CheatTarget::One(bwc_contract_address));
@@ -193,7 +193,7 @@ fn test_update_stake_detail_balance() {
     let stake_dispatcher = IStakeDispatcher { contract_address: staking_contract_address };
     let bwc_dispatcher = IERC20Dispatcher { contract_address: bwc_contract_address };
 
-    //user1 is being sent 35 worth of bwc tokens
+    //user1 is being sent 35 worth of sft tokens
     start_prank(CheatTarget::One(bwc_contract_address), Account::admin());
     bwc_dispatcher.transfer(Account::user1(), 35);
     stop_prank(CheatTarget::One(bwc_contract_address));
@@ -217,7 +217,7 @@ fn test_update_stake_detail_balance() {
 }
 
 
-//Test that bwc tokens have been sent from the staker to the staking contract after staking
+//Test that sft tokens have been sent from the staker to the staking contract after staking
 #[test]
 fn test_transfer_stake_token() {
     let (staking_contract_address, bwc_contract_address, receipt_contract_address, _) =
@@ -482,7 +482,7 @@ fn test_insufficient_reward_token() {
 }
 
 
-//Test that the staking contract has suffient bwc token for withdrawal
+//Test that the staking contract has suffient sft token for withdrawal
 #[test]
 fn test_sufficient_bwc_token_for_withdraw() {
     let (

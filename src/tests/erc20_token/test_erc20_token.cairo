@@ -1,6 +1,6 @@
 use core::option::OptionTrait;
-use stakeflow::receipt_token::IERC20DispatcherTrait;
-use stakeflow::receipt_token::{IERC20, ERC20, IERC20Dispatcher};
+use stakeflow::receipt_erc20_token::IERC20DispatcherTrait;
+use stakeflow::receipt_erc20_token::{IERC20, ERC20, IERC20Dispatcher};
 use starknet::ContractAddress;
 use starknet::contract_address::contract_address_const;
 use core::array::ArrayTrait;
@@ -11,8 +11,8 @@ use core::traits::{Into, TryInto};
 use starknet::syscalls::deploy_syscall;
 use starknet::SyscallResultTrait;
 
-const name_: felt252 = 'BlockheaderToken';
-const symbol_: felt252 = 'BHT';
+const name_: felt252 = 'StakeFlow Token';
+const symbol_: felt252 = 'SFT';
 const decimals_: u8 = 18_u8;
 
 
@@ -29,7 +29,7 @@ fn test_token_name() {
     let contract_address = deploy_contract();
     let dispatcher = IERC20Dispatcher { contract_address };
     let name = dispatcher.get_name();
-    assert(name == 'BlockheaderToken', 'name is not correct');
+    assert(name == 'StakeFlow Token', 'name is not correct');
 }
 
 #[test]
