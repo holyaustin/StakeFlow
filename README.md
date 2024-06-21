@@ -186,3 +186,5 @@ StakeFlow aims to revolutionize the staking experience by leveraging StarkNet’
 <https://starknet-sepolia.reddio.com/rpc/v0_7>
 
 <https://starknet-sepolia.public.blastapi.io/rpc/v0_7>
+
+0x0785fc7063c064df7eA6aaF70777afd413E5bB9D15e2A52dD47A1bC58f72B0F6

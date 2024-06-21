@@ -59,13 +59,13 @@ const ConnectProvider = ({ children }) => {
   );
 
   const stakingContractAddress =
-  "0x0418c48faa18849a7410844456d829b0393f0e981093f651700cb5ed6cca2700";
-  const bwcContractAddress = "0x03ae4482d3273f1e8117335b2985154c4b014e28028c2427ba67452756b61b85"
-  const faucetContractAddress = "0x062a32c28e77d7ea584742d2522e9a5d02da4d261b1be4304d5c9b060b5e7533"
-  const receiptContractAddress = "0x0132088afa8dba7ad8f0bcc9368f762b6cf270e201645115e64bbeda112bd628"
-  const rewardContractAddress = "0x06cbc1299cd8f2c07956d99189d3d4be9326cc11bacc69ec76eac675e2ed930b"
+  "0x00389df2a54a7a6612c2c3e33813b87e90efa239cbc80367383c27a3f674bd42";
+  const bwcContractAddress = "0x04fef1e8f0db73ebf7542c8d28e1bb47c3c7b33977b056ce0320af9f86c5f836"
+  const faucetContractAddress = "0x03d4a69a108fd120272b0e41a086664fb72ddda950d368f5c9e8c6217b31b02b"
+  const receiptContractAddress = "0x04155676f7d25529a4aaf7694f25641b11e2b6431593d7aefb2d645690008d40"
+  const rewardContractAddress = "0x04fef1e8f0db73ebf7542c8d28e1bb47c3c7b33977b056ce0320af9f86c5f836"
 
-const rpc_provider = new RpcProvider({ nodeUrl: 'https://starknet-goerli.g.alchemy.com/v2/cmootBfOhD5Yjs5hTaEY3hf5PlFabEO_' });
+const rpc_provider = new RpcProvider({ nodeUrl: 'https://starknet-sepolia.public.blastapi.io/rpc/v0_7' });
 const staking_contract = new Contract(staking_contract_abi, stakingContractAddress, rpc_provider)
 const bwc_contract = new Contract(bwc_token_abi, bwcContractAddress, rpc_provider)
 const faucet_contract = new Contract(faucet_abi, faucetContractAddress, rpc_provider)

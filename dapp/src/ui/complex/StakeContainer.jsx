@@ -36,7 +36,7 @@ function StakeContainer() {
       setIsStaking(true);
       const big = new BigNumber(amount).shift(18).toString();
       bwc_contract.connect(account)
-      await  bwc_contract.approve("0x0418c48faa18849a7410844456d829b0393f0e981093f651700cb5ed6cca2700", big)
+      await  bwc_contract.approve("0x00389df2a54a7a6612c2c3e33813b87e90efa239cbc80367383c27a3f674bd42", big)
       staking_contract.connect(account);
       const { transaction_hash: stakeTxHash } =
         await staking_contract.stake(big);
@@ -80,7 +80,7 @@ function StakeContainer() {
       <CryptoInput amount={amount} setAmount={setAmount} balance={bwcBalance} />
       <div className="mt-[21px] flex items-center justify-between text-sm font-medium text-[#3a3a3a]">
         <h3 className="text-black">You will receive</h3>
-        <h3>{amount} RBCW</h3>
+        <h3>{amount} RSFT</h3>
       </div>
       <button disabled={isStaking}
         className="mt-[48px] w-full disabled:cursor-not-allowed disabled:opacity-90 rounded-[50px] bg-[#430F5D] py-[10px] text-center text-base font-black text-white"
@@ -89,7 +89,7 @@ function StakeContainer() {
         {isStaking ? 'Staking...' : 'Stake'}
       </button>
       <div className="mt-[23px] flex flex-col gap-y-4">
-        <DataROw title={"Current price"} value={"1BWC = 1RBWC"} />
+        <DataROw title={"Current price"} value={"1 SFT = 1 RSFT"} />
       </div>
     </div>
   );

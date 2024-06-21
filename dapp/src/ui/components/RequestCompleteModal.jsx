@@ -3,7 +3,7 @@ function RequestCompleteModal() {
     <div className="pt-[24px] text-center font-bold leading-6 text-black">
       <h1 className="mb-[12px] text-xl">Request Complete</h1>
       <p className="text-sm font-medium text-[#3a3a3a]">
-        Congratulations, 10BWC was sent to your account.
+        Congratulations, 10 SFT was sent to your account.
       </p>
 
       <h3 className="mb-[12px] mt-8 text-sm">Transaction Hash</h3>

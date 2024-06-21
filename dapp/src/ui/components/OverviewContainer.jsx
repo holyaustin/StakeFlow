@@ -45,19 +45,19 @@ function OverviewContainer() {
         </div>
         <div className="text-center">
           <h2 className="mb-[14px] text-lg font-semibold">Liquidity Staked</h2>
-          <h3 className="text-sm font-bold text-[#3a3a3a]">{stakeBalance || "0"} BWC</h3>
+          <h3 className="text-sm font-bold text-[#3a3a3a]">{stakeBalance || "0"} SFT</h3>
         </div>
        
        <div className="text-center">
        <h2 className="mb-[14px] text-lg font-semibold">Receipt Token</h2>
           <h3 className="text-sm font-bold text-[#3a3a3a]">
-            {receiptBalance || "0"} cBWC
+            {receiptBalance || "0"} cSFT
           </h3>
        </div>
         <div className="text-center">
           <h2 className="mb-[14px] text-lg font-semibold">Reward Token</h2>
           <h3 className="text-sm font-bold text-[#3a3a3a]">
-            {rewardBalance || "0"} RBWC
+            {rewardBalance || "0"} RSFT
           </h3>
         </div>
         <div className="text-center">

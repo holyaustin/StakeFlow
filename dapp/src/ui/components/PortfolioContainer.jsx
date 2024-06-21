@@ -29,12 +29,12 @@ function PortfolioContainer() {
           <h5 className="mb-[25px] text-xl font-semibold">
             Total Liquidity Staked
           </h5>
-          <h2 className="text-[48px] font-bold">{stakeBalance || "0"} BWC</h2>
+          <h2 className="text-[48px] font-bold">{stakeBalance || "0"} SFT</h2>
         </div>
         <div className="h-[136px] w-[0.5px] bg-[#3a3a3a]"></div>
         <div className="flex flex-col items-center text-center">
           <h5 className="mb-[25px] text-xl font-semibold">Intrest Accrued</h5>
-          <h2 className="text-[48px] font-bold">{stakeBalance || "0"} RBWC</h2>
+          <h2 className="text-[48px] font-bold">{stakeBalance || "0"} RSFT</h2>
         </div>
       </div>
       {/* <div className="text-center">
