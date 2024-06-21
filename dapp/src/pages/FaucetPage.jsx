@@ -11,8 +11,13 @@ function FaucetPage() {
   const sendFaucet = async () => {
     try {
       setIsFauceting(true)
-       faucet_contract.connect(account)
-        await faucet_contract.request_bwc_token(address)
+      console.log("address is ", address)
+      console.log("account is ", account)
+      console.log("faucet_contract is ", faucet_contract)
+      faucet_contract.connect(account)
+      console.log("about to request tokens ")
+      await faucet_contract.request_bwc_token(address)
+      console.log("Token requested successfully")
     } catch (error) {
         alert(error.message)
         console.log(error)
