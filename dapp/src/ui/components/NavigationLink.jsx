@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function NavigationLink({ text, to }) {
   return (
-    <li className="rounded-[20px] bg-transparent px-[20px] py-[10px]">
+    <li className="rounded-[20px] bg-transparent px-[20px] md:px-[0px] py-[10px]">
       <NavLink to={to}>{text}</NavLink>
       {/* {text} */}
     </li>

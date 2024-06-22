@@ -19,14 +19,14 @@ function WalletConnector() {
     <>
       {connection ? (
         <button
-          className="px-6 rounded-[20px] py-3 bg-white font-bold text-sm text-[#121212] cursor-pointer"
+          className="px-5 md:px-6 rounded-[20px] py-3 bg-white font-bold text-sm text-[#121212] cursor-pointer"
           onClick={onDisconnect}
         >
           Disconnect
         </button>
       ) : (
         <button
-          className="px-6 rounded-[20px] py-3 bg-white font-bold text-sm text-[#121212] cursor-pointer"
+          className="px-5 md:px-6 rounded-[20px] py-3 bg-white font-bold text-sm text-[#121212] cursor-pointer"
           onClick={onConnect}
         >
           Connect Wallet
