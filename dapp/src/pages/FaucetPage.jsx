@@ -27,9 +27,9 @@ function FaucetPage() {
 }
 
   return (
-    <div className="px-[324px] text-white">
+    <div className="pt-[124px] md:pt-[36px] px-[14px] md:px-[224px] text-white">
       <h1 className="text-2xl font-bold">Request testnet tokens</h1>
-      <p className="mb-5 mt-3 text-lg font-medium">
+      <p className="mb-5 mt-3 text-sm md:text-lg font-medium">
         This Faucet sends small amounts of SWF to an account address on Starknet.
         You can use it to test and make transactions on Starknet.
       </p>

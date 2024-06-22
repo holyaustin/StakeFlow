@@ -7,7 +7,7 @@ function FaucetRequestContainer({sendFaucet, isFauceting}) {
   const {address} = useConnectWallet()
   const [value] = useState(address);
   return (
-    <div className="shadow-shadowPrimary flex flex-col rounded-[5px] bg-white px-6 pb-10 pt-6">
+    <div className="shadow-shadowPrimary flex flex-col rounded-[5px] bg-white px-6 pb-4 pb-10 pt-6">
       <h2 className="text-lg font-medium text-[#3a3a3a]">Account Address</h2>
       <div className="relative mt-[23px] w-full">
         <button className="absolute inset-y-0 right-0 cursor-pointer bg-transparent py-[9px] pr-[24px]">
@@ -24,7 +24,7 @@ function FaucetRequestContainer({sendFaucet, isFauceting}) {
           value={value.slice(0,42).concat("...")}
         />
       </div>
-      <button onClick={() => {sendFaucet()}} disabled={isFauceting} className="mt-[60px] disabled:cursor-not-allowed self-center rounded-[50px] bg-[#430F5D] disabled:opacity-90 px-[172px] py-[10px]">
+      <button onClick={() => {sendFaucet()}} disabled={isFauceting} className="mt-[30px] md:mt-[60px] disabled:cursor-not-allowed self-center rounded-[50px] bg-[#430F5D] disabled:opacity-90 px-[72px] md:px-[172px] py-[10px]">
         {isFauceting ? 'Sending tokens...' : "Send Request"}
       </button>
     </div>

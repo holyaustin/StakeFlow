@@ -23,18 +23,18 @@ function PortfolioContainer() {
     getBalance();
   }, [address]);
   return (
-    <div className="flex w-full items-center justify-between rounded-[10px] bg-white pb-[18px] pl-[62px] pr-[48px] pt-[22px]">
-      <div className="flex gap-x-[97px]">
+    <div className="flex w-full items-center justify-between rounded-[10px] bg-white pb-[18px] pl-[12px] pr-[8px] md:pl-[62px] md:pr-[48px] pt-[22px]">
+      <div className="flex gap-x-[14px] md:gap-x-[97px]">
         <div className="flex flex-col items-center text-center">
           <h5 className="mb-[25px] text-xl font-semibold">
             Total Liquidity Staked
           </h5>
-          <h2 className="text-[48px] font-bold">{stakeBalance || "0"} SFT</h2>
+          <h2 className="text-[24px] md:text-[48px] font-bold">{stakeBalance || "0"} SFT</h2>
         </div>
-        <div className="h-[136px] w-[0.5px] bg-[#3a3a3a]"></div>
+        <div className="h-[166px] w-[0.5px] bg-[#3a3a3a]"></div>
         <div className="flex flex-col items-center text-center">
           <h5 className="mb-[25px] text-xl font-semibold">Intrest Accrued</h5>
-          <h2 className="text-[48px] font-bold">{stakeBalance || "0"} SWRT</h2>
+          <h2 className="text-[24px] md:text-[48px] font-bold">{stakeBalance || "0"} SWRT</h2>
         </div>
       </div>
       {/* <div className="text-center">

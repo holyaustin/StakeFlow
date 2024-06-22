@@ -57,7 +57,7 @@ function StakeContainer() {
   }
 
   return (
-    <div className="mx-auto w-[550px] rounded-[20px] bg-white p-6 text-[#3a3a3a] shadow-shadowPrimary">
+    <div className="mx-auto w-[350px] md:w-[550px] rounded-[20px] bg-white p-6 text-[#3a3a3a] shadow-shadowPrimary mt-[150px]">
       <div className="mb-[21px] flex items-center justify-between font-medium">
         <h1 className="text-xl">Deposit</h1>
         <div className="flex items-center text-xs">

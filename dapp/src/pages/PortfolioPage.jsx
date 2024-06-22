@@ -3,7 +3,7 @@ import PortfolioContainer from "../ui/components/PortfolioContainer";
 
 function PortfolioPage() {
   return (
-    <div className="px-[80px] pb-[110px] pt-[36px] text-[#3a3a3a]">
+    <div className="px-[20px] md:px-[80px] pb-[110px] pt-[144px] md:pt-[36px] text-[#3a3a3a]">
       <h1 className="mb-2 text-2xl font-semibold text-white">Portfolio</h1>
       <PortfolioContainer />
     </div>

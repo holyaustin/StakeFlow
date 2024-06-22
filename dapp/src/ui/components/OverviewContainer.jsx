@@ -35,7 +35,7 @@ function OverviewContainer() {
     getBalance();
   }, [address]);
   return (
-    <div className="flex items-center justify-between rounded-[10px] bg-white px-[74px] py-[36px] text-black">
+    <div className="flex items-center justify-between rounded-[10px] bg-white px-[14px] md:px-[74px] py-[36px] text-black">
       <div className="flex md:gap-x-[60px]">
         <div className="text-center">
           <h2 className="mb-[14px] text-lg font-semibold">SFT Balance</h2>
