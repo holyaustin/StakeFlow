@@ -13,6 +13,21 @@ function OverviewContainer() {
   const [rewardBalance, setRewardBalance] = useState("")
   const [sftBalance, setSftBalance] = useState("")
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://sepolia-api.voyager.online/beta/contracts/0x07e500e037b86842fc3cc194febbb86959c131e5509d72401fe99725087029f4", {
+      method: 'GET',
+      // mode: 'cors',
+      headers: {
+        'x-api-key': 'DxIjcUrPFD54OOWPSRrBl7KCCI5aYlOe2Vp2kfnR'
+      }
+  })
+      .then(response => response.json())
+      .then(json => setData(json))
+      .catch(error => console.error(error));      
+  }, []);
+
   // get_total_stake
   const getBalance = async () => {
     try {
@@ -35,6 +50,7 @@ function OverviewContainer() {
     getBalance();
   }, [address]);
   return (
+    <div>
     <div className="flex items-center justify-between rounded-[10px] bg-white px-[14px] md:px-[74px] py-[36px] text-black">
       <div className="flex md:gap-x-[60px]">
         <div className="text-center">
@@ -72,6 +88,25 @@ function OverviewContainer() {
       >
         {parseInt(stakeBalance) > 0 ? 'Withdraw' : 'Stake'}
       </button>
+      
+      </div>
+      <div className="text-center">
+
+        </div>
+
+      <div className="flex flex-col justify-between rounded-[10px] bg-white px-[14px] md:px-[74px] py-[36px] text-black mt-10 ">
+      <h1 className="mb-[34px] text-2xl font-semibold">Staking Contract Details from Voyager</h1>
+        <h2 className="mb-[14px] text-lg font-semibold">Address: {data.address}</h2>
+        
+        <h2 className="mb-[14px] text-lg font-semibold">BlockHash : {data.blockHash}</h2>
+        <h2 className="mb-[14px] text-lg font-semibold">Block Number: {data.blockNumber}</h2>
+        <h2 className="mb-[14px] text-lg font-semibold">Class Hash : {data.classHash}</h2>
+        <h2 className="mb-[14px] text-lg font-semibold">creation Time stamp : {data.creationTimestamp}</h2>
+        <h2 className="mb-[14px] text-lg font-semibold">version : {data.version}</h2>
+{/**
+        {data ? <pre className="text-lg">{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
+        */}
+</div>
     </div>
   );
 }

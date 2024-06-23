@@ -188,3 +188,20 @@ StakeFlow aims to revolutionize the staking experience by leveraging StarkNet’
 <https://starknet-sepolia.public.blastapi.io/rpc/v0_7>
 
 0x0785fc7063c064df7eA6aaF70777afd413E5bB9D15e2A52dD47A1bC58f72B0F6
+
+  "address": "0x07e500e037b86842fc3cc194febbb86959c131e5509d72401fe99725087029f4",
+  "blockHash": "0x375b2ab3df315d92c716d3e5c17387f4ab22e9f111041abcd2efa9060e935fe",
+  "blockNumber": 75275,
+  "classAlias": null,
+  "classHash": "0x079417a181edfe4ee36656efe23a93d638fc466131cb70c58ac32d309b19eaaa",
+  "contractAlias": null,
+  "creationTimestamp": 1718976036,
+  "isAccount": false,
+  "isErcToken": false,
+  "isProxy": false,
+  "nonce": null,
+  "verifiedTimestamp": null,
+  "type": "Unknown",
+  "version": "2.4.1",
+  "tokenName": null,
+  "tokenSymbol": null
