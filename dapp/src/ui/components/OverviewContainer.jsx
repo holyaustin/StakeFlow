@@ -6,7 +6,8 @@ import { useConnectWallet } from "../../context/ConnectContext";
 
 function OverviewContainer() {
   const { address, staking_contract, account, receipt_contract,reward_contract,
-    rewardContractAddress,  sft_contract } = useConnectWallet();
+    rewardContractAddress, sft_contract } = useConnectWallet();
+  const address2 = address;
   const navigate = useNavigate();
   const [stakeBalance, setStakeBalance] = useState("");
   const [receiptBalance, setReceiptBalance] = useState("")
@@ -28,17 +29,18 @@ function OverviewContainer() {
       .catch(error => console.error(error));      
   }, []);
 
+
   // get_total_stake
   const getBalance = async () => {
     try {
-      const rawSftBalance = await sft_contract.balance_of(address);
+      const rawSftBalance = await sft_contract.balance_of(address2);
       setSftBalance(new BigNumber(rawSftBalance).shift(-18).toFixed(2).toString())
-      const rawRewardBalance = await reward_contract.balance_of(address);
+      const rawRewardBalance = await reward_contract.balance_of(address2);
       setRewardBalance(new BigNumber(rawRewardBalance).shift(-18).toFixed(2).toString())
-      const rawReceiptBalance = await receipt_contract.balance_of(address);
+      const rawReceiptBalance = await receipt_contract.balance_of(address2);
       setReceiptBalance(new BigNumber(rawReceiptBalance).shift(-18).toFixed(2).toString())
       staking_contract.connect(account)
-      const balance = await staking_contract.get_stake_balance(account.address);
+      const balance = await staking_contract.get_stake_balance(account.address2);
       const big = new BigNumber(balance).shift(-18).toFixed(2).toString();
       setStakeBalance(big);
     } catch (err) {
@@ -48,7 +50,7 @@ function OverviewContainer() {
 
   useEffect(() => {
     getBalance();
-  }, [address]);
+  }, [address2]);
   return (
     <div>
     <div className="flex items-center justify-between rounded-[10px] bg-white px-[14px] md:px-[74px] py-[36px] text-black">
@@ -93,8 +95,8 @@ function OverviewContainer() {
       <div className="text-center">
 
         </div>
-
-      <div className="flex flex-col justify-between rounded-[10px] bg-white px-[14px] md:px-[74px] py-[36px] text-black mt-10 ">
+{/**
+    <div className="flex flex-col justify-between rounded-[10px] bg-white px-[14px] md:px-[74px] py-[36px] text-black mt-10 ">
       <h1 className="mb-[34px] text-2xl font-semibold">Staking Contract Details from Voyager</h1>
         <h2 className="mb-[14px] text-lg font-semibold">Address: {data.address}</h2>
         
@@ -103,11 +105,12 @@ function OverviewContainer() {
         <h2 className="mb-[14px] text-lg font-semibold">Class Hash : {data.classHash}</h2>
         <h2 className="mb-[14px] text-lg font-semibold">creation Time stamp : {data.creationTimestamp}</h2>
         <h2 className="mb-[14px] text-lg font-semibold">version : {data.version}</h2>
-{/**
+     
         {data ? <pre className="text-lg">{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
-        */}
-</div>
-    </div>
+      
+    </div> 
+    */}   
+  </div>
   );
 }
 
