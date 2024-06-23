@@ -4,20 +4,39 @@ A full stack Starknet Dapp with functionalities that allows staking of ERC20 tok
 
 The project has three tokens to interact with:
 
-1. `BWCERC20TOKEN`: ERC20 Token that users can use to interact with the project.
-2. `ReceiptToken`: ERC20 Token that users gets as a receipt for staking the `BWCERC20TOKEN`. This token has no intrisic value and can only be used to withdraw the `BWCERC20TOKEN` after the staking period has elapsed.
-3. `RewardToken`: ERC20 token that users get as a reward for staking `BWCERC20TOKEN` after a specific period of time.
+1. `SFTERC20TOKEN`: ERC20 Token that users can use to interact with the project.
+2. `ReceiptToken`: ERC20 Token that users gets as a receipt for staking the `SFTERC20TOKEN`. This token has no intrisic value and can only be used to withdraw the `SWFERC20TOKEN` after the staking period has elapsed.
+3. `RewardToken`: ERC20 token that users get as a reward for staking `SFTERC20TOKEN` after a specific period of time.
 
 ## How It Works
 
-1. User stakes a specific amount of `BWCERC20TOKEN` into the contract.
-    - The contract sends the equivalent of `ReceiptToken` into the user's wallet as a receipt for staking `BWCERC20TOKEN`.
+1. User stakes a specific amount of `SFTERC20TOKEN` into the contract.
+    - The contract sends the equivalent of `ReceiptToken` into the user's wallet as a receipt for staking `SFTERC20TOKEN`.
     - The staked token is locked in the contract for period of time.
     - Within this period which the token is locked, the user cannot withdraw the staked token unless the locked period is over.
     - The user can still stake more tokens within this locked period.
     - If at anytime during the locked period, the user stakes more token, the locked period is reset.
-2. After the locked period is over, the user is then allowed to withdraw their staked `BWCERC20TOKEN`.
-3. After withdrawal of `BWCERC20TOKEN`, the user is rewarded with `RewardToken` that is directly propotional to the amount of `BWCERC20TOKEN` token staked.
+2. After the locked period is over, the user is then allowed to withdraw their staked `SFTERC20TOKEN`.
+3. After withdrawal of `SFTERC20TOKEN`, the user is rewarded with `RewardToken` that is directly propotional to the amount of `SFTERC20TOKEN` token staked.
+
+## Project and contract URLs
+
+https://docs.google.com/presentation/d/1_ub6KTpOswbOtWQky7NVKuXNKMmNl8UB/edit?usp=sharing&ouid=116692451666417119294&rtpof=true&sd=true
+
+https://stake-flow.vercel.app/
+
+https://youtu.be/PDnXlCHkO1Q
+
+https://sepolia.voyager.online/contract/0x05acb1fb1f2248966ebf01e7a800d19736af8ab4b860227849d85209c894eed8
+
+https://sepolia.voyager.online/contract/0x02a5eaf135031ecad3ad538ef5c965d84954ecb3384dbcff21786200bf68a234
+
+https://sepolia.voyager.online/contract/0x025354142f8bed84d1d2d3b29326fb40c9f02a01d51b2bac9632f9f2f5aa31f2
+
+https://sepolia.voyager.online/contract/0x075b55552992eea0bba7c15da130b06da80f8ba9d7021c4cd501af5d69267127
+
+https://sepolia.voyager.online/contract/0x07e500e037b86842fc3cc194febbb86959c131e5509d72401fe99725087029f4
+
 
 ## Getting Started
 
@@ -100,85 +119,57 @@ The project has three tokens to interact with:
     └── test_contract.cairo
 ```
 
-StakeFlow: A Web3 Staking dApp Proposal
-Overview
-StakeFlow is a decentralized application (dApp) designed to provide a seamless and secure staking experience on the StarkNet blockchain. StakeFlow will enable users to stake their tokens, earn rewards, and participate in governance, all through an intuitive and user-friendly interface.
+## StakeFlow: A Web3 Staking dApp Proposal
+### Overview
+StakeFlow is a decentralized application (dApp) designed to provide a seamless and secure staking experience on the StarkNet blockchain. StakeFlow will enable users to stake their tokens, and earn rewards all through an intuitive and user-friendly interface.
 
-Key Features
-User-Friendly Dashboard:
+## Key Features
+### User-Friendly Dashboard:
 
 Staking Overview: Display total staked tokens, current rewards, and estimated earnings.
+
 Portfolio Management: Track staked tokens across different pools.
-Staking Pools:
 
-Multiple Pools: Allow users to stake in various pools with different reward rates and lock-up periods.
-Custom Pools: Users can create and manage their staking pools.
-Rewards System:
-
-Real-Time Rewards: Display real-time reward updates.
+### Real-Time Rewards: Display real-time reward updates.
 Compounding Options: Users can choose to auto-compound their rewards.
-Governance Participation:
 
-Voting Mechanism: Users can use staked tokens to vote on protocol proposals.
-Proposal Creation: Allow eligible users to create new governance proposals.
-Security Features:
-
-Multi-Signature Wallet Support: Enhance security for high-value accounts.
-Audited Smart Contracts: Regular security audits to ensure the safety of user funds.
-Analytics and Reporting:
+## Analytics and Reporting:
 
 Performance Metrics: Detailed analytics on staking performance and historical data.
+
 Exportable Reports: Users can export staking and reward reports for personal record-keeping.
-Integration and Interoperability:
+
+## Integration and Interoperability:
 
 Wallet Integration: Support for major wallets like MetaMask, WalletConnect, etc.
+
 Interoperability: Cross-chain staking capabilities to support tokens from different blockchains.
-Deployment on StarkNet
-Smart Contract Development:
+
+## Deployment on StarkNet
+### Smart Contract Development:
 
 Develop staking and reward distribution contracts in Cairo, StarkNet's native programming language.
+
 Utilize StarkNet's layer 2 scalability to ensure low gas fees and fast transaction times.
-Testing and Audits:
+
+## Testing and Audits:
 
 Conduct extensive testing on StarkNet's testnet to ensure robustness.
+
 Perform security audits with reputable firms to identify and mitigate vulnerabilities.
-Frontend Integration:
+
+## Frontend Integration:
 
 Build a responsive frontend using React and integrate with StarkNet via the StarkNet.js library.
+
 Ensure seamless user experience across desktop and mobile devices.
 Deployment and Maintenance:
 
 Deploy the smart contracts to StarkNet mainnet.
+
 Establish a continuous integration/continuous deployment (CI/CD) pipeline for regular updates and maintenance.
-Rough Sketch of the UI
-Here's a rough sketch of the UI for StakeFlow:
 
-Home Screen:
-
-Header: Navigation menu with links to Dashboard, Staking Pools, Governance, and Profile.
-Main Section: Overview of total staked tokens, rewards, and latest updates.
-Footer: Quick links, social media icons, and contact information.
-Dashboard:
-
-Sidebar: Links to different sections (Overview, My Staking, Rewards, Governance).
-Main Panel:
-Staking Overview: Visual representation of staked tokens and rewards.
-Recent Activity: List of recent staking and reward activities.
-Portfolio Breakdown: Pie chart showing distribution of staked tokens.
-Staking Pools:
-
-Available Pools: List of staking pools with details like reward rate, lock-up period, and total staked tokens.
-Staking Form: Input fields for staking amount and pool selection.
-Action Buttons: Stake, Unstake, and Claim Rewards.
-Governance:
-
-Active Proposals: List of current governance proposals with voting options.
-Create Proposal: Form for eligible users to submit new proposals.
-Profile:
-
-User Info: Display user’s wallet address, total staked tokens, and rewards.
-Settings: Options for notification preferences, security settings, and account management.
-Conclusion
+### Conclusion
 StakeFlow aims to revolutionize the staking experience by leveraging StarkNet’s scalability and security. With a focus on user experience, robust security features, and comprehensive analytics, StakeFlow will empower users to maximize their staking rewards and actively participate in governance.
 
 <https://blastapi.io/public-api/starknet>
@@ -186,22 +177,3 @@ StakeFlow aims to revolutionize the staking experience by leveraging StarkNet’
 <https://starknet-sepolia.reddio.com/rpc/v0_7>
 
 <https://starknet-sepolia.public.blastapi.io/rpc/v0_7>
-
-0x0785fc7063c064df7eA6aaF70777afd413E5bB9D15e2A52dD47A1bC58f72B0F6
-
-  "address": "0x07e500e037b86842fc3cc194febbb86959c131e5509d72401fe99725087029f4",
-  "blockHash": "0x375b2ab3df315d92c716d3e5c17387f4ab22e9f111041abcd2efa9060e935fe",
-  "blockNumber": 75275,
-  "classAlias": null,
-  "classHash": "0x079417a181edfe4ee36656efe23a93d638fc466131cb70c58ac32d309b19eaaa",
-  "contractAlias": null,
-  "creationTimestamp": 1718976036,
-  "isAccount": false,
-  "isErcToken": false,
-  "isProxy": false,
-  "nonce": null,
-  "verifiedTimestamp": null,
-  "type": "Unknown",
-  "version": "2.4.1",
-  "tokenName": null,
-  "tokenSymbol": null
